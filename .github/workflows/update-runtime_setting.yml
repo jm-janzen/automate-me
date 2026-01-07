@@ -6,11 +6,14 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  echo:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
+      - env:
+          PAYLOAD: ${{ github.event.client_payload }}
 
-      - name: Yes hello
-        run: echo Who is this\?
+      - name: Echo payload
+        run: |
+          echo "Payload: ${PAYLOAD}"
