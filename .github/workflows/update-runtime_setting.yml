@@ -1,0 +1,16 @@
+name: Update runtime_setting.yaml
+
+on:
+  repository_dispatch:
+    types: [gpu-cluster-users-changed]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Yes hello
+        run: echo Who is this\?
