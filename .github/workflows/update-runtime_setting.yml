@@ -9,8 +9,7 @@ jobs:
   echo:
     runs-on: ubuntu-latest
     steps:
-      - name: Parse payload
-        env:
+      - env:
           PAYLOAD: ${{ github.event.client_payload }}
         run: |
           echo "Payload: ${PAYLOAD}"
