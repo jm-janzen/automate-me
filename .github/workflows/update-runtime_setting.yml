@@ -11,8 +11,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Echo payload 
-      - run: |
-          echo "Payload: ${PAYLOAD}"
+      - name: Echo payload
         env:
           PAYLOAD: ${{ github.event.client_payload }}
+      - run: |
+          echo "Payload: ${PAYLOAD}"
