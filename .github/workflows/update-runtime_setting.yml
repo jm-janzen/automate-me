@@ -8,11 +8,7 @@ on:
 jobs:
   echo:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Check out repo
-        uses: actions/checkout@v4
-
       - name: Parse payload
         env:
           PAYLOAD: ${{ github.event.client_payload }}
