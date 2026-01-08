@@ -3,13 +3,13 @@ name: Update runtime_setting.yaml
 on:
   repository_dispatch:
     types: [gpu-cluster-users-changed]
-  workflow_dispatch:
 
 jobs:
   echo:
     runs-on: ubuntu-latest
     steps:
-      - env:
-          PAYLOAD: ${{ github.event.client_payload }}
+      - name: Echo Payload
+        env:
+          PAYLOAD: ${{ github.event.client_payload.data }}
         run: |
           echo "Payload: ${PAYLOAD}"
