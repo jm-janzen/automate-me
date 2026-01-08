@@ -10,8 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Parse payload
         env:
           PAYLOAD: ${{ github.event.client_payload }}
-      - run: |
+        run: |
           echo "Payload: ${PAYLOAD}"
